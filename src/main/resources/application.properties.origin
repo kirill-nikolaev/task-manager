@@ -1,0 +1,12 @@
+#Data Source
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/your_db
+spring.datasource.username=
+spring.datasource.password=
+
+#Hibernate
+spring.jpa.properties.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.show_sql=true
+
+#thymeleaf th:method
+spring.mvc.hiddenmethod.filter.enabled=true
