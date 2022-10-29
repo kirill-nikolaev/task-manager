@@ -31,6 +31,6 @@ public class Person {
     private String lastName;
 
     @Column(name = "role")
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Role role;
 }

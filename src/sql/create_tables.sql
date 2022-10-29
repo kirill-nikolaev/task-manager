@@ -5,4 +5,12 @@ CREATE TABLE person (
     first_name varchar(30) NOT NULL,
     last_name varchar(30) NOT NULL,
     role varchar (15) NOT NULL
-)
+);
+
+TRUNCATE TABLE person;
+
+INSERT INTO person(username, password, first_name, last_name, role)
+VALUES ('admin', '$2a$12$RxrESzKINhrMtkz7.7awTeIbtvfogvEZ/bLmKcpxW2rvJc85ffiUu',
+        'admin', 'admin', 'ROLE_ADMIN'),
+        ('dev', '$2a$12$I7q7vKd7e7gCergPhf4Gt.VeMyXB3tcTNu6eqbD36AT.GNyyAPc9W',
+            'developer','developer', 'ROLE_DEVELOPER');
