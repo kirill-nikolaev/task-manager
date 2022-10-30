@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -50,20 +50,17 @@
                 <table class="table table-striped table-hover">
                     <tr>
                         <td class="fw-bold">Username</td>
-                        <td class="fw-bold">Fullname</td>
+                        <td class="fw-bold">Full name</td>
                         <td class="fw-bold">Role</td>
                     </tr>
-                    <tr>
-                        <td> <a href="#" class="link-primary">Guest1</a></task>
+                    <tr th:each="person : ${people}">
+                        <td>
+                            <a th:href="@{/users/{id}(id = ${person.getId()})}"
+                               th:text="${person.getUsername()}"
+                               class="link-primary"></a>
                         </td>
-                        <td>Guest Guest</td>
-                        <td>Guest</td>
-                    </tr>
-                    <tr>
-                        <td> <a href="#" class="link-primary">Dev1</a></task>
-                        </td>
-                        <td>Dev Dev</td>
-                        <td>Developer</td>
+                        <td th:text="${person.getFirstName() + ' ' + person.getLastName()}"></td>
+                        <td th:text="${person.getRole().getValue()}"></td>
                     </tr>
                 </table>
             </div>
