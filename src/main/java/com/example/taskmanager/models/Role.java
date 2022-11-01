@@ -20,7 +20,6 @@ public enum Role {
             if (role.getValue().equals(value))
                 return role;
         }
-
         return null;
     }
 }
