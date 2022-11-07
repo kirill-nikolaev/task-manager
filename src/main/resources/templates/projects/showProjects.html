@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -24,12 +24,12 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link active">
+                <a href="/projects" class="nav-link active">
                     Projects
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link link-dark">
+                <a href="/users" class="nav-link link-dark">
                     Users
                 </a>
             </li>
@@ -46,17 +46,13 @@
                         <td class="fw-bold">Manager</td>
                         <td class="fw-bold">Strarted</td>
                     </tr>
-                    <tr>
-                        <td> <a href="#" class="link-primary">task 1</a></task>
+                    <tr th:each="project : ${projects}">
+                        <td>
+                            <a th:href="@{/projects/{id}(id = ${project.getId()})}" class="link-primary" th:text="${project.getName()}">project name</a>
                         </td>
-                        <td>project 1</td>
-                        <td>20/12/22</td>
-                    </tr>
-                    <tr>
-                        <td> <a href="#" class="link-primary">task 2</a></task>
-                        </td>
-                        <td>project 2</td>
-                        <td>21/12/23</td>
+                        <td th:text="${project.getPerson().username} +'('
+                        + ${project.getPerson().firstName} + ' ' + ${project.getPerson().lastName} + ')'">manager</td>
+                        <td th:text="${project.getStart()}">date</td>
                     </tr>
                 </table>
             </div>

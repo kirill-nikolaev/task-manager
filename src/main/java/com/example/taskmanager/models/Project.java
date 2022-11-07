@@ -24,11 +24,11 @@ public class Project {
     @Column(name = "name")
     @Size(min = 3, max = 50, message = "Project name must be between 3 and 50 characters")
     @NotNull(message = "Project name must not be empty")
-    private int name;
+    private String name;
 
     @Column(name = "description")
     @Size(max = 250,  message = "Description must be less than and 250 characters")
-    private int description;
+    private String description;
 
     @Column(name = "start")
     private LocalDate start;
