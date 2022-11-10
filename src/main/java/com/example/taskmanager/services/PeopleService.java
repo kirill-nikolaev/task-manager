@@ -51,4 +51,8 @@ public class PeopleService {
         person.setRole(Role.ROLE_GUEST);
         peopleRepository.save(person);
     }
+
+    public List<Person> findByRole(Role role) {
+        return peopleRepository.findByRole(role);
+    }
 }
